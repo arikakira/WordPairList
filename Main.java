@@ -2,6 +2,11 @@ public class Main
 {
     public static void main(String[] args) {
         String[] wordNums = {"one", "two", "three"};
-        WordPairList = exampleOne = new WordPairList(wordNums);
+        WordPairList exampleOne = new WordPairList(wordNums);
+        System.out.println(exampleOne.getAllPairs());
+
+        String[] phrase = {"the", "more", "the", "merrier"};
+        WordPairList exampleTwo = new WordPairList(phrase);
+        System.out.println(exampleTwo.getAllPairs());
     }
 }

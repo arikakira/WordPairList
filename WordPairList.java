@@ -1,24 +1,37 @@
+import java.util.ArrayList;
 
 public class WordPairList {
     /** The list of word pairs, initialized by the constructor. */
     private ArrayList<WordPair> allPairs;
-    allPairs = new ArrayList<WordPair>();
 
     /**
      * Constructs a WordPairList object as described in part (a).
      * Precondition: words.length >= 2
      */
     public WordPairList(String[] words) {
+        allPairs = new ArrayList<WordPair>();
         for(int i=0; i<words.length; i++) {
             for(int k=i+1; k<words.length; k++) {
-
+                WordPair w = new WordPair(words[i], words[k]);
+                allPairs.add(w);
             }
         }
+    }
+
+    public ArrayList<WordPair> getAllPairs() {
+        return allPairs;
     }
 
     /**
      * Returns the number of matches as described in part (b).
      */
     public int numMatches() {
-        /* to be implemented in part (b) */ }
+        int matches = 0;
+        for(WordPair w : allPairs) {
+            if(w.getFirst().equals(w.getSecond())) {
+                matches++;
+            }
+        }
+        return matches;
+    }
 }
